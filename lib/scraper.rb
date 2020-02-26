@@ -37,8 +37,18 @@ class Scraper
     socials = page.css(".social-icon-container a")
     socials.each do |social|
       url = social.attribute("href").value
+      if url.include?("twitter")
+        profile_hash[:twitter] = url
+      elsif url.include?("linkedin")
+        profile_hash[:linkedin] = url
+      elsif url.include?("github")
+        profile_hash[:github] = url
+      elsif url.include?("learn.co")
+        profile_hash[:blog] = url
+      end
     end
-      
+    
+    return profile_hash
   end
 
 end
