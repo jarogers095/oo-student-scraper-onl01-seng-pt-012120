@@ -37,6 +37,7 @@ class Scraper
     socials = page.css(".social-icon-container a")
     socials.each do |social|
       url = social.attribute("href").value
+    end
       
   end
 
