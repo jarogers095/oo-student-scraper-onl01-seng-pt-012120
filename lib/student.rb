@@ -15,7 +15,7 @@ class Student
   def self.create_from_collection(students_array)
     puts students_array
     students_array.each do |student|
-      new_student_hash = Scraper.scrape_profile_page(student["profile_url"])
+      new_student_hash = Scraper.scrape_profile_page(student[:profile_url])
       new_student = Student.new(new_student_hash)
     end
   end
