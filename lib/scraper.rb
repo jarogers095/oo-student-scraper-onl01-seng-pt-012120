@@ -9,7 +9,7 @@ class Scraper
     students_array = []
     cards.each do |card|
       student_hash = {
-        name: card.css()
+        name: card.css("a .card-text-container ")
       }
   end
 
