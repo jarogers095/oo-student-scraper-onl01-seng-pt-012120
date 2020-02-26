@@ -38,13 +38,13 @@ class Scraper
     socials.each do |social|
       url = social.attribute("href").value
       
-      if social.css(.social-icon).attribute("src").value.include?("twitter")
+      if social.css(".social-icon").attribute("src").value.include?("twitter")
         profile_hash[:twitter] = url
-      elsif social.css(.social-icon).attribute("src").value.include?("linkedin")
+      elsif social.css(".social-icon").attribute("src").value.include?("linkedin")
         profile_hash[:linkedin] = url
-      elsif social.css(.social-icon).attribute("src").value.include?("github")
+      elsif social.css(".social-icon").attribute("src").value.include?("github")
         profile_hash[:github] = url
-      elsif social.css(.social-icon).attribute("src").value.include?("rss")
+      elsif social.css(".social-icon").attribute("src").value.include?("rss")
         profile_hash[:blog] = url
       end
     end
