@@ -13,6 +13,10 @@ class Scraper
         location: card.css("a .card-text-container .student-location").text,
         profile_url: card.css("a").attribute("href")
       }
+      students_array << student_hash
+    end
+    
+    return students_array
   end
 
   def self.scrape_profile_page(profile_url)
